@@ -1,12 +1,13 @@
-import { Router } from 'express';
-import UserModel from '../models/user.model.js';
+import UserModel from '../models/User.model.js';
+import handleHttp from '../utils/error.handle.js';
 
-const user = Router();
+export const createUser = async (req, res) => {};
 
-user.post('/register', async (req, res) => {
-  const body = req.body;
-  const response = await UserModel.create(body);
-  res.send(response);
-});
-
-export default user;
+export const getUsers = async (req, res) => {
+  try {
+    const response = await UserModel.find({});
+    res.send(response);
+  } catch (e) {
+    handleHttp(res, 'ERROR_GET_CARS', e);
+  }
+};
