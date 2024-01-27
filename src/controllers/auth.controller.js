@@ -2,6 +2,7 @@ import UserModel from '../models/User.model.js';
 import { encrypt, verified } from '../utils/bcrypt.handle.js';
 import { generateToken } from '../utils/jwt.handle.js';
 import Role from '../models/Role.model.js';
+import handleHttp from '../utils/error.handle.js';
 
 export const signUp = async (req, res) => {
   const { name, email, password, roles } = req.body;
