@@ -11,8 +11,8 @@ const router = Router();
 
 router.post('/car', createCar);
 router.get('/cars', getCars);
-router.get('/car:id', getCar);
-router.put('/car:id', updateCar);
-router.delete('car/:id', deleteCar);
+router.get('/car/:id', getCar);
+router.put('/car/:id', updateCar);
+router.delete('/car/:id', deleteCar);
 
 export default router;
