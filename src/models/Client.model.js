@@ -15,7 +15,7 @@ const ClientSchema = new Schema(
 
     phone: {
       required: true,
-      type: String,
+      type: Number,
     },
 
     address: {
